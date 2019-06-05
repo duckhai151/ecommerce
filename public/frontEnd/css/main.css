@@ -1,0 +1,33 @@
+.productinfo {
+	border: 1px solid #D3D3D3;
+	padding: 0 5px 10px 5px;
+}
+.productinfo img {
+	width: 100%;
+}
+.producinfo a {
+	padding: 10px;
+}
+
+.total-box {
+	border: 1px solid #DCDCDC;
+	padding: 5px 0 5px 10px;
+}
+.order-box {
+	border: 1px solid #DCDCDC;
+	padding: 5px 0 5px 30px;
+}
+
+.checkout-box {
+	border: 1px solid black;
+	padding: 5px 0 5px 30px;
+	background-color: #DCDCDC;
+}
+
+
+
+
+
+/*.total-box p {
+	padding: 5px 0 0 10px;
+}*/

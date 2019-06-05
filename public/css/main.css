@@ -1,0 +1,22 @@
+.navbarfull {
+	height: 100%;
+	position: fixed;
+	background-color: #32393F;
+	width: 250px;	
+	padding-top: 56px;
+	padding-left: 15px;
+}
+
+.navbarfull a {
+	color: white;
+}
+
+.container-fluid {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.col-md-10 {
+	padding-left: 0;
+	padding-right: 0;
+}
