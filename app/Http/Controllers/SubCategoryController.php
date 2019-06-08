@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\SubCategory_model;
-
+use App\Category_model;
 class SubCategoryController extends Controller
 {
     public function index(){
@@ -13,7 +13,8 @@ class SubCategoryController extends Controller
     }
 
     public function getCreate(){
-    	return view('backEnd.subcategory.create');
+        $categories = Category_model::all();
+    	return view('backEnd.subcategory.create', compact('categories'));
     }
 
     public function postCreate(Request $request){

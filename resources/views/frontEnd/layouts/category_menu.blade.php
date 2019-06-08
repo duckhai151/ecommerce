@@ -1,9 +1,6 @@
 <h4>CATEGORY</h4>
 <hr>
 <ul class="list-group">
-	{{-- @foreach($categories as $cate)
-		<li class="list-group-item"><a href="#">{{ $cate->name }}</a></li>
-	@endforeach --}}
 	@foreach($categories as $category)
 		<div class="list-group-item">
 			<a href="{{route('home.category',$category->id)}}" class="">{{$category->name}}</a>

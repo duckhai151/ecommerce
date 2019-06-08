@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Products_model;
 use App\SubCategory_model;
+use App\Category_model;
 
 class ProductController extends Controller
 {
@@ -15,7 +16,8 @@ class ProductController extends Controller
 
     public function getCreate(){
     	$subcategories = SubCategory_model::all();
-    	return view('backEnd.product.create',compact('subcategories'));
+        $categories = Category_model::all();
+    	return view('backEnd.product.create',compact('subcategories','categories'));
     }
 
     public function postCreate(Request $request){

@@ -32,3 +32,8 @@
 </div>
 @endif
 @endsection
+@section('js')
+<script language="javascript">
+	var 
+</script>
+@endsection

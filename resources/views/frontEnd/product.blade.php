@@ -18,7 +18,7 @@
 				<h3>{{$sku->product->name}}</h3>
 				<p>Code ID: {{$sku->product->id}}</p>
 				<div class="form-group">
-					<select name="size">
+					<select name="size" onchange="validateChange(this)">
 						@foreach($sku->product->productssku as $listsku)
 							<option value="{{$listsku->size}}" >{{$listsku->size}}</option>
 						@endforeach
@@ -34,10 +34,18 @@
 						Out of Stock
 					@endif
 				</p>
-				<p><b>Condition:</b> New</p>	
-				<button class="btn btn-primary">Add to Cart</button>
+				<p><b>Condition:</b> New</p>
+				<button type="submit" class="btn btn-primary">Add to Cart <i class="fas fa-shopping-cart"></i></button>	
 			</div>
 		</form>
 	</div>
 </div>
+@endsection
+@section('js')
+<script language="javascript">
+	function validateChange(obj){
+		var options = obj.children;
+		var value = 
+	}
+</script>
 @endsection
