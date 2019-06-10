@@ -13,8 +13,7 @@ class SubCategoryController extends Controller
     }
 
     public function getCreate(){
-        $categories = Category_model::all();
-    	return view('backEnd.subcategory.create', compact('categories'));
+    	return view('backEnd.subcategory.create');
     }
 
     public function postCreate(Request $request){

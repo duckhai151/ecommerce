@@ -16,8 +16,7 @@ class ProductController extends Controller
 
     public function getCreate(){
     	$subcategories = SubCategory_model::all();
-        $categories = Category_model::all();
-    	return view('backEnd.product.create',compact('subcategories','categories'));
+    	return view('backEnd.product.create',compact('subcategories');
     }
 
     public function postCreate(Request $request){

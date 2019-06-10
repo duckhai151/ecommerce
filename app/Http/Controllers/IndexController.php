@@ -11,8 +11,7 @@ class IndexController extends Controller
 {
     public function index()
     {
-        $categories = Category_model::all();
-    	return view('frontEnd.index', compact('categories'));
+    	return view('frontEnd.index');
     }
 
     public function product($id)
