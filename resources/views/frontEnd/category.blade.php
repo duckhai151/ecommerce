@@ -15,7 +15,6 @@
 				<p>Size: {{$data['size']}}</p>
 				<h5>${{$data['price']}}</h5>
 				<a href="{{route('home.product',$data['id'])}}" class="btn btn-info">View Product</a>
-				<a href="#" class="btn btn-dark"><i class="fas fa-cart-plus"></i></a>
 			</div>		
 		</div>
 	@endforeach

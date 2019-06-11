@@ -8,6 +8,6 @@ class AdminController extends Controller
 {
     public function index()
     {
-    	return view('backEnd.layouts.master');
+    	return redirect()->route('product.index');
     }
 }
