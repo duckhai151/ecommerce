@@ -1,6 +1,7 @@
 .productinfo {
 	border: 1px solid #D3D3D3;
 	padding: 0 5px 10px 5px;
+	margin-bottom: 15px;
 }
 .productinfo img {
 	width: 100%;
