@@ -9,6 +9,7 @@ class AjaxController extends Controller
 {
     public function getSku($number){
     	$sku = ProductsSKU_model::find($number);
+    	echo "<input type='hidden' name='sku_id' value='".$sku->id."'>";
    		echo "<h4>$".$sku->price."</h4>";
 		echo "<label><b>Quantity: </b></label>";
 		echo "<input type='text' size='1px' name='quantity' value='".$sku->stock."' class='text-center'>";

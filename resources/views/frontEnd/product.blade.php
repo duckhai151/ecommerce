@@ -11,7 +11,6 @@
 		<form action="{{route('home.cart')}}" method="post" role="form">
 			@csrf
 			<input type="hidden" name="product_id" value="{{$sku->product->id}}">
-			<input type="hidden" name="sku_id" value="{{$sku->id}}">
 			<input type="hidden" name="name" value="{{$sku->product->name}}">
 			<input type="hidden" name="price" value="{{$sku->price}}">
 			<div>
@@ -25,6 +24,7 @@
 					</select>
 				</div>
 				<div id="divajax">
+					<input type="hidden" name="sku_id" value="{{$sku->id}}">
 					<h4>${{$sku->price}}</h4>
 					<label><b>Quantity:</b></label>
 					<input type="text" size="1px" name="quantity" value="{{$sku->stock}}" class="text-center">
