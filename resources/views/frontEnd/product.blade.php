@@ -18,24 +18,26 @@
 				<h3>{{$sku->product->name}}</h3>
 				<p>Code ID: {{$sku->product->id}}</p>
 				<div class="form-group">
-					<select name="size" onchange="validateChange(this)">
+					<select name="size" id="size">
 						@foreach($sku->product->productssku as $listsku)
-							<option value="{{$listsku->size}}" >{{$listsku->size}}</option>
+							<option value="{{$listsku->id}}" >{{$listsku->size}}</option>
 						@endforeach
 					</select>
 				</div>
-				<h4>${{$sku->price}}</h4>
-				<label><b>Quantity:</b></label>
-				<input type="text" size="1px" name="quantity" value="{{$sku->stock}}" class="text-center">
-				<p><b>Availability:</b>
-					@if($sku->stock > 0)
-						In Stock
-					@else
-						Out of Stock
-					@endif
-				</p>
-				<p><b>Condition:</b> New</p>
-				<button type="submit" class="btn btn-primary">Add to Cart <i class="fas fa-shopping-cart"></i></button>	
+				<div id="divajax">
+					<h4>${{$sku->price}}</h4>
+					<label><b>Quantity:</b></label>
+					<input type="text" size="1px" name="quantity" value="{{$sku->stock}}" class="text-center">
+					<p><b>Availability:</b>
+						@if($sku->stock > 0)
+							In Stock
+						@else
+							Out of Stock
+						@endif
+					</p>
+					<p><b>Condition:</b> New</p>
+					<button type="submit" class="btn btn-primary">Add to Cart <i class="fas fa-shopping-cart"></i></button>
+				</div>
 			</div>
 		</form>
 	</div>
@@ -43,9 +45,13 @@
 @endsection
 @section('js')
 <script language="javascript">
-	function validateChange(obj){
-		var options = obj.children;
-		var value = 
-	}
+	$(document).ready(function(){
+		$('#size').change(function(){
+			var idSku = $('#size').val();
+			$.get('ajax/'+idSku,function(data){
+				$('#divajax').html(data);
+			});
+		});
+	});
 </script>
 @endsection

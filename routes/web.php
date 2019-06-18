@@ -24,6 +24,7 @@ Route::post('cart','CartController@cart')->name('home.cart');
 Route::get('remove/{id}','CartController@remove')->name('home.remove');
 Route::post('checkout','CheckoutController@checkout')->name('home.checkout');
 Route::get('order','CheckoutController@order')->name('home.order');
+Route::get('product/ajax/{number}','AjaxController@getSku');
 Route::group(['prefix'=>'admin','middleware'=>'adminLogin'], function(){
 	Route::get('/','AdminController@index')->name('admin');
 	Route::group(['prefix'=>'category'], function(){
