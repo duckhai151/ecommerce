@@ -8,20 +8,23 @@ use App\Category_model;
 class CategoryController extends Controller
 {
     public function index(){
-    	$categories = Category_model::paginate(5);
+    	$categories = Category_model::paginate(10);
     	return view('backEnd.category.index', compact('categories'));
     }
 
     public function getCreate(){
-    	return view('backEnd.category.create');
+        $categories = Category_model::all();
+    	return view('backEnd.category.create', compact('categories'));
     }
 
     public function postCreate(Request $request){
     	$this->validate($request,[
     		'name' => 'required|max:255|min:1|unique:categories,name',
     	]);
-    	$category = $request->all();
-    	Category_model::create($category);
+        $category = new Category_model;
+    	$category->name = $request->name;
+        $category->parent_id = $request->parent_id;
+    	$category->save();
     	return redirect()->route('category.getCreate')->with('message','Added Success !');
     }
 

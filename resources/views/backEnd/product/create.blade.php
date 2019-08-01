@@ -19,14 +19,7 @@
 				@endforeach
 			</select>
 		</div>
-		<div class="form-group">
-			<label>SubCategory Name</label>
-			<select name="subcat_id" id="subcat_id" class="form-control">
-				@foreach($subcategories as $subcategory)
-					<option value="{{$subcategory->id}}">{{$subcategory->name}}</option>
-				@endforeach
-			</select>
-		</div>
+		
 		<div class="form-group">
 			<label>Image</label>
 			<input type="file" class="form-control" name="img" id="img">

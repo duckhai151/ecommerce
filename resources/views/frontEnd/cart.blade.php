@@ -1,7 +1,7 @@
 @extends('frontEnd.layouts.master')
 @section('title','Cart')
 @section('content')
-<h4>Cart</h4>
+<h4>CART</h4>
 <hr>
 <div class="row">
 	<div class="col-md-12">
@@ -40,9 +40,9 @@
 						</th>
 						<th>{{$item->price}}$</th>
 						<th>
-							<a href="{{url("cart?product_id=$item->id&decrease=1")}}" class="btn text-dark">-</a> 
+							<!-- <a href="{{url("cart?product_id=$item->id&decrease=1")}}" class="btn text-dark">-</a> --> 
 							{{$item->qty}} 
-							<a href="{{url("cart?product_id=$item->id&increment=1")}}" class="btn text-dark">+</a>
+							<!-- <a href="{{url("cart?product_id=$item->id&increment=1")}}" class="btn text-dark">+</a> -->
 						</th>
 						<th>{{$item->subtotal}}$</th>
 						<th>

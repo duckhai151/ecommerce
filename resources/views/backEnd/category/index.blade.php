@@ -8,18 +8,21 @@
 	<thead class="thead-dark">
 		<tr>
 			<th>Category Name</th>
-			<th>SubCategory Name</th>
+			<th>ParentCategory Name</th>
 			<th>Created At</th>
 			<th>Action</th>
 		</tr>
 	</thead>
 	<tbody>
 		@foreach($categories as $category)
+		<?php
+			$parent_cates = DB::table('categories')->select('name')->where('id',$category->parent_id)->get();
+		?>
 			<tr>
 				<th>{{ $category->name }}</th>
 				<th>
-					@foreach($category->subcategories as $subcategory)
-						{{$subcategory->name}} <br>
+					@foreach($parent_cates as $parent_cate)
+						{{$parent_cate->name}}
 					@endforeach
 				</th>
 				<th>{{ $category->created_at }}</th>

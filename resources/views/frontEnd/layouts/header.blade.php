@@ -47,8 +47,9 @@
 							</li>
 							<li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
 						</ul>
-						<form class="form-inline" action="#">
-							<input class="form-control" type="text" placeholder="Search"> 
+						<form class="form-inline" action="{{route('home.search')}}" method="post">
+							@csrf
+							<input class="form-control" type="text" name="key" id="key" placeholder="Search"> 
 							<button class="btn btn-success" type="submit"><i class="fas fa-search"></i></button>	
 						</form>
 					</nav>

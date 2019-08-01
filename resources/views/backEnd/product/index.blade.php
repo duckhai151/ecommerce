@@ -8,7 +8,6 @@
 	<thead class="thead-dark">
 		<tr>
 			<th>Product Name</th>
-			<th>Subcate/Category Name</th>
 			<th>Image</th>
 			<th>Size</th>
 			<th>Price</th>
@@ -21,7 +20,7 @@
 		@foreach($products as $product)
 			<tr>
 				<th>{{$product->name}}</th>
-				<th>{{$product->subcategory->name}} / {{$product->subcategory->category->name}}</th>
+				
 				<th><img src="{{url('products/image',$product->img)}}" width="80px" height="70px"></th>
 				<th>
 					@foreach($product->productssku as $sku)

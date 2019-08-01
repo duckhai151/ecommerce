@@ -15,6 +15,7 @@ Route::get('/','IndexController@index')->name('home');
 Route::get('product/{id}','IndexController@product')->name('home.product');
 Route::get('category/{id}','IndexController@category')->name('home.category');
 Route::get('subcategory/{id}','IndexController@subcategory')->name('home.subcategory');
+Route::post('search','IndexController@search')->name('home.search');
 Route::get('login_page','UsersController@getLogin')->name('home.getLogin');
 Route::post('user_register','UsersController@postRegister')->name('home.postRegister');
 Route::post('user_login','UsersController@postLogin')->name('home.postLogin');

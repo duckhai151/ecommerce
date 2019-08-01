@@ -13,9 +13,9 @@ class Products_model extends Model
     {
     	return $this->hasMany('App\ProductsSKU_model','product_id','id');
     }
-    public function subcategory()
+    public function category()
     {
-    	return $this->belongsTo('App\SubCategory_model','subcat_id','id');
+    	return $this->belongsTo('App\Category_model','cat_id','id');
     }
     public function gallery()
     {

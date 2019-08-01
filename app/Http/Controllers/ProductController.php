@@ -4,19 +4,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Products_model;
-use App\SubCategory_model;
 use App\Category_model;
 
 class ProductController extends Controller
 {
     public function index(){
-    	$products = Products_model::paginate(10);
+    	$products = Products_model::paginate(5);
+        // $products = Products_model::orderBy('created_at')->paginate(5);
     	return view('backEnd.product.index',compact('products'));
     }
 
     public function getCreate(){
-    	$subcategories = SubCategory_model::all();
-    	return view('backEnd.product.create',compact('subcategories'));
+    	return view('backEnd.product.create');
     }
 
     public function postCreate(Request $request){
